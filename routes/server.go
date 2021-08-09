@@ -9,19 +9,15 @@ import(
 func GetRouter() *gin.Engine {
 	router := gin.Default()
 	
-	// auth := router.Group("/auth")
-	// {
-	router.LoadHTMLGlob("resources/views/*")
+	auth := router.Group("/auth")
+	{
+		router.LoadHTMLGlob("resources/views/auth/*")
 
-	router.GET("/signup",controller.Signup)
-	router.POST("/signup",controller.Resister)
-
-
-	// 	auth.GET("/signup",controller.Signup)
-	// 	auth.POST("/signup",controller.Resister)
-	// 	auth.GET("/signin",controller.Signin)
-	// 	auth.POST("/signin",controller.Login)
-	// }
+		auth.GET("/signup",controllers.Signup)
+		auth.POST("/signup",controllers.Resister)
+		auth.GET("/signin",controllers.Signin)
+		auth.POST("/signin",controllers.Login)
+	}
 
 	return router
 }

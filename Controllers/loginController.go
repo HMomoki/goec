@@ -1,4 +1,4 @@
-package controller
+package controllers
 
 import(
 	"github.com/gin-gonic/gin"
@@ -11,6 +11,7 @@ func Signin(c *gin.Context) {
 	c.HTML(http.StatusOK, "signin.html", gin.H{
 	})
 }
+
 func Login(c *gin.Context) {
 	email := c.PostForm("email")
 	dbPassword := models.GetUser(email).Password
