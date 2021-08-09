@@ -11,7 +11,11 @@ func GetRouter() *gin.Engine {
 	
 	// auth := router.Group("/auth")
 	// {
-	// 	router.LoadHTMLGlob("resources/views/auth/*")
+	router.LoadHTMLGlob("resources/views/*")
+
+	router.GET("/signup",controller.Signup)
+	router.POST("/signup",controller.Resister)
+
 
 	// 	auth.GET("/signup",controller.Signup)
 	// 	auth.POST("/signup",controller.Resister)
