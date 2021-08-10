@@ -10,6 +10,3 @@ ADD . /go/src/work
 RUN go get github.com/gin-gonic/gin
 RUN go get github.com/jinzhu/gorm
 RUN go get github.com/go-sql-driver/mysql
-
-# FROM mysql:8.0
-# COPY ./mysql.conf.d /etc/mysql/mysql.conf.d
