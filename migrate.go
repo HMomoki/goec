@@ -1,10 +1,10 @@
 package main
 
 import(
-	"sample_blog/database"
+	"goec/database"
 )
 
-func main() {
+func main() { //main
 	//Migrationの実行
 	database.InitDB()
 }

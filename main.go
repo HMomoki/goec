@@ -1,11 +1,11 @@
 package main
 
-import(
+import (
 	"goec/routes"
 )
 
 func main(){
 	router := routes.GetRouter()
 
-	router.Run(":8080")
+	router.Run(":2500")
 }

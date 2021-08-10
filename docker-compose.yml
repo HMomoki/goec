@@ -4,6 +4,29 @@ services:
     build: . # ビルドに使用するDockerfileがあるディレクトリ指定
     tty: true # コンテナの起動永続化
     ports:
-      - "8080:8080" #Port番号8080
+      - "2500:2500" #Port番号8080
+    links:
+      - db
     volumes:
       - .:/go/src/work # マウントディレクトリ指定
+    stdin_open: true
+  db:
+    image: mysql:8.0
+    container_name: dockerMySQL 
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: SampleBlog
+      MYSQL_USER: workuser
+      MYSQL_PASSWORD: password
+      TZ: 'Asia/Tokyo'
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - ./docker/db/data:/var/lib/mysql
+      - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./docker/db/sql:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306
+
+  # volumes:
+  #   db-data:
+  #   driver: local
