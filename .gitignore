@@ -1,5 +1,5 @@
 /node_modules
-/docker/db/data
+/Docker/db/data
 
 .envrc
 .env
