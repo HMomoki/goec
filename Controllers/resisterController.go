@@ -1,10 +1,11 @@
 package controllers
 
-import(
-	"github.com/gin-gonic/gin"
+import (
 	"net/http"
 
-	"goec/Models"
+	models "goec/Models"
+
+	"github.com/gin-gonic/gin"
 )
 
 func Signup(c *gin.Context){
