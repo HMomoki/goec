@@ -1,5 +1,5 @@
-/node_modules
-/docker/db/data
+vue/node_modules
+/Docker/db/data
 
 .envrc
 .env
