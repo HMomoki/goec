@@ -39,6 +39,5 @@ services:
       - 2600:2600
     volumes:
       - .:/app/
-      # - ./app/node_modiles
     depends_on:
       - app
