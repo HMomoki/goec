@@ -7,5 +7,5 @@ import (
 func main(){
 	router := routes.GetRouter()
 
-	router.Run(":2500")
+	router.Run(":8000")
 }
