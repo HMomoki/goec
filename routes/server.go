@@ -7,16 +7,11 @@ import(
 )
 
 func GetRouter() *gin.Engine {
-	router := gin.Default()
-	
+	router := aloowCrossOrigin() 
+
 	auth := router.Group("/auth")
 	{
-		router.LoadHTMLGlob("resources/views/auth/*")
-
-		auth.GET("/signup",controllers.Signup)
-		auth.POST("/signup",controllers.Resister)
-		auth.GET("/signin",controllers.Signin)
-		auth.POST("/signin",controllers.Login)
+		auth.POST("/signup",controllers.Signup)
 	}
 
 	return router
