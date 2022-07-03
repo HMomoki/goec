@@ -11,10 +11,7 @@ func GetRouter() *gin.Engine {
 
 	auth := router.Group("/auth")
 	{
-		auth.GET("/signup",controllers.Signup)
-		auth.POST("/signup",controllers.Resister)
-		auth.GET("/signin",controllers.Signin)
-		auth.POST("/signin",controllers.Login)
+		auth.POST("/signup",controllers.Signup)
 	}
 
 	return router

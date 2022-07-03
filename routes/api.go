@@ -8,9 +8,11 @@ import (
 func aloowCrossOrigin() *gin.Engine {
 	router := gin.Default()
 	
+	//COR設定
 	router.Use(cors.New(cors.Config{
 		AllowOrigins: []string{
 			"http://localhost:8080",
+			"http://localhost:3306",
 		},
 		AllowMethods: []string{
 			"POST",
